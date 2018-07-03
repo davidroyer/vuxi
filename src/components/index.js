@@ -1,32 +1,30 @@
 import Vue from "vue";
 
-// import eventBus from '@/helpers/eventBus';
 import VButton from "./VButton.vue";
 import VInput from "./VInput.vue";
-
-// function triggerGlobalClick(e) {
-//   e.stopPropagation();
-//   eventBus.$emit('focusChanged', this);
-// }
-// document.addEventListener('click', triggerGlobalClick);
-//
-// Vue.mixin({
-//   mounted() {
-//     this.$el.addEventListener('click', triggerGlobalClick);
-//   },
-//   beforeDestroy() {
-//     this.$el.removeEventListener('click', triggerGlobalClick);
-//   },
-// });
 
 const Components = {
   VButton,
   VInput
 };
 
-Object.keys(Components).forEach(name => {
-  Vue.component(name, Components[name]);
-});
+const Vuxi = {
+  install: function(Vue, options) {
+    Object.keys(Components).forEach(name => {
+      Vue.component(name, Components[name]);
+    });
+  }
+};
 
-export default Components;
-// export { eventBus };
+// Auto-install when vue is found (eg. in browser via <script> tag)
+let GlobalVue = null;
+if (typeof window !== "undefined") {
+  GlobalVue = window.Vue;
+} else if (typeof global !== "undefined") {
+  GlobalVue = global.Vue;
+}
+if (GlobalVue) {
+  GlobalVue.use(plugin);
+}
+
+export default Vuxi;

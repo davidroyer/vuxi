@@ -1,11 +1,27 @@
 {
   "name": "vuxi",
   "version": "0.1.0",
-  "private": true,
+  "description": "Vue.js UX/UI Component Library",
+  "author": {
+    "name": "David Royer",
+    "email": "droyer01@gmail.com"
+  },
+  "private": false,
+  "repository": {
+    "url": "davidroyer/vuxi",
+    "type": "git"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/vuxi.common.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:lib": "vue-cli-service build --target lib --name vuxi ./src/components/index.js",
+    "build-wc": "vue-cli-service build --target wc --name vuxi 'src/components/*.vue'",
+    "build-wc-async": "vue-cli-service build --target wc-async --name vuxi 'src/components/*.vue'"
   },
   "dependencies": {
     "vue": "^2.5.16"
@@ -39,5 +55,6 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "license": "MIT"
 }

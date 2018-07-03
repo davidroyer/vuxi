@@ -1,26 +1,23 @@
 <template>
-  <!-- <component :is="type"></component> -->
-  <button
-    v-if="!routerLink"
+  <component
     class="v-button"
-    v-on="$listeners"
-  >
-    <slot/>
-  </button>
-  <router-link 
-  v-else
-  :to="disabled ? '' : routeObject ? routeObject : routeUrl"
-  tag="button"
-  class="v-button"
-  :class="[disabled ? 'disabled' : '']"
->
-  <slot/>
-</router-link>
+    :is="component"
+    v-bind="$attrs"
+    :type="type"
+    :tabindex="0"
+    role="button"
+    v-on="$listeners">
+    <span class="text">
+      <slot>
+        <!-- {{ label }} -->
+      </slot>
+    </span>
+  </component>
 </template>
 
 <script>
 export default {
-  name: "VButton",
+  name: "v-button",
   props: {
     routeUrl: String,
     routeObject: Object,
@@ -28,22 +25,63 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    type: {
+      type: String,
+      default: "button"
+    }
+  },
+  computed: {
+    component() {
+      if (this.$attrs.to) {
+        return "router-link";
+      } else if (this.$attrs.href) {
+        return "a";
+      } else {
+        return "button";
+      }
     }
   }
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .v-button {
-  color: $red;
-  border: 2px solid;
+  display: flex;
+  align-items: center;
+  height: $size-large;
+  font-family: $font-heading-family;
+  font-size: 12px;
+  text-transform: uppercase;
+  border: $border-default;
 
-  @include respond-above(sm) {
-    color: $blue;
+  .v-icon {
+    color: inherit;
+
+    &.left {
+      margin-right: $size-xsmall;
+    }
+
+    &.right {
+      margin-left: $size-xsmall;
+    }
   }
 
-  @include respond-above(md) {
-    color: $purple;
+  &.large {
+    height: $size-xlarge;
+    font-size: 14px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: $color-white;
+    background-color: $color-black;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    color: $color-white;
+    background: $color-black;
   }
 }
 </style>

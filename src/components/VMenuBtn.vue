@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "VButton",
+  name: "VMenuButton",
   props: ["tag", "text"]
 };
 </script>

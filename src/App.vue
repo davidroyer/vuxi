@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <v-button @click="handleClick">Test Button</v-button>
+    <v-button @click="handleClick">Test Button 1</v-button>
+    <v-button @click="handleClick">Test Button 2</v-button>
+    <v-button href="https://davidroyer.me" target="_blank" rel="noreferrer">External Link</v-button>
     <v-input id="input1" label="My Input"></v-input>
   </div>
 </template>

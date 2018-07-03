@@ -1,4 +1,4 @@
-import Vue from "vue";
+// import Vue from "vue";
 
 import VButton from "./VButton.vue";
 import VInput from "./VInput.vue";
@@ -9,6 +9,7 @@ const Components = {
 };
 
 const Vuxi = {
+  // eslint-disable-next-line
   install: function(Vue, options) {
     Object.keys(Components).forEach(name => {
       Vue.component(name, Components[name]);
@@ -24,7 +25,7 @@ if (typeof window !== "undefined") {
   GlobalVue = global.Vue;
 }
 if (GlobalVue) {
-  GlobalVue.use(plugin);
+  GlobalVue.use(Vuxi);
 }
 
 export default Vuxi;

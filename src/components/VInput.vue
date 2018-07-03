@@ -1,53 +1,86 @@
 <template>
-  <div class="input max-w-sm mx-auto my-6">
-    <label v-text="label" :for="id" class="block uppercase tracking-wide text-grey-darker text-sm font-bold mb-2"></label>
+  <div class="v-input-wrapper">
+    <!-- 
+    Bind the parent's id attribute to the label's "for" attribute. 
+    The id attribute from the parent will be added to the input,
+    ensuring that the label specifies which input it is bound to.
+    -->
+    <label
+      v-if="label"
+      class="v-input-label"
+      :for="$attrs.id"
+    >
+      {{ label }}
+    </label>
+    <!-- 
+    Bind attributes from parent to the input using v-bind="$attr", 
+    e.g. <v-input placerholder="Email"> will set the input's 
+    placeholder property to "Email".
+
+    v-on="listeners" ensures that all native events from the input
+    propagate to the parent, allowing native events to be called
+    from the parent, e.g. <v-input @focus="focusEvent" />
+    -->
     <input
-      :type="type"
-      :value="value"
-      :id="id"
-      :name="id"
-      class="appearance-none block w-full text-grey-darker border border-grey-light rounded py-3 px-4 leading-tight"
-      :class="$style.input"
-      v-on="listeners"
+      class="v-input"
+      :class="[fullWidth ? 'full-width' : '']"
       v-bind="$attrs"
+      v-on="listeners"
+      :value="value"
     >
   </div>
 </template>
 
 <script>
 export default {
-  inheritAttrs: false,
   name: "VInput",
+  inheritAttrs: false,
   props: {
-    type: {
-      type: String,
-      default: "text"
-    },
-    value: {
-      type: [String, Number],
-      default: ""
-    },
-    id: {
-      type: String,
-      required: true
-    },
-    label: {
-      type: String,
-      default: ""
-    }
+    value: String,
+    label: String,
+    fullWidth: Boolean
   },
   computed: {
+    /*
+    The "listeners()" computed property is responsible
+    for emitting all events from an inner element to the parent.
+    The input method ensures that v-model works with the parent.
+    */
     listeners() {
       return {
         ...this.$listeners,
         input: event => this.$emit("input", event.target.value)
       };
     }
-  }
+  },
+  methods: {}
 };
 </script>
 
-<style lang="css" module>
-.input {
+<style lang="scss" scoped>
+.v-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.v-input-label {
+  margin-bottom: $size-xsmall;
+  font-family: $font-heading-family;
+  font-size: 14px;
+}
+
+.v-input {
+  height: $size-xlarge;
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: $size-xsmall;
+  padding: 0 $size-xsmall;
+  font-size: 14px;
+  border: $border-default;
+
+  &.full-width {
+    max-width: 100%;
+  }
 }
 </style>

@@ -2,7 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <v-button @click="handleClick">Test Button</v-button>
-    <v-input label="My Input"></v-input>
+    <v-input id="input1" label="My Input"></v-input>
   </div>
 </template>
 

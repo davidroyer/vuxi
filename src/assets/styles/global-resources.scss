@@ -1,0 +1,25 @@
+// Globally avialable SCSS
+@import "./base/colors";
+@import "./base/sizes";
+@import "./base/_borders";
+@import "./base/_durations";
+@import "./base/responsive";
+@import "./base/_typography";
+
+/*
+LAYOUTS
+ */
+$our-layout: (
+  header: (
+    background: red
+  ),
+  content: (
+    background: blue
+  ),
+  footer: (
+    background: green,
+    child: (
+      background: yellow
+    )
+  )
+);

@@ -1,0 +1,62 @@
+// FONTS
+$system-default-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+$font-heading-family: $system-default-font-family;
+$font-heading-weight: 700;
+
+$font-content-family: $system-default-font-family;
+$font-content-weight: 400;
+$font-content-weight-heavy: 500;
+$font-content-line-height: 1.5;
+
+%font-heading {
+  font-family: $font-heading-family;
+  font-weight: $font-heading-weight;
+  color: $color-black;
+}
+
+%font-content {
+  font-family: $font-content-family;
+  font-weight: $font-content-weight;
+  color: $color-black;
+}
+
+* {
+  @extend %font-content;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @extend %font-heading;
+}
+
+p {
+  line-height: $font-content-line-height;
+}
+
+// ICONS
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: $size-medium;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}

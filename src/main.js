@@ -1,6 +1,8 @@
 import Vue from "vue";
 import App from "./App.vue";
-import "./components";
+import Vuxi from "./components";
+
+Vue.use(Vuxi);
 Vue.config.productionTip = false;
 
 new Vue({

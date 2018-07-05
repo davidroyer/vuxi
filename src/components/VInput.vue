@@ -1,32 +1,14 @@
 <template>
   <div class="v-input-wrapper">
-    <!-- 
-    Bind the parent's id attribute to the label's "for" attribute. 
-    The id attribute from the parent will be added to the input,
-    ensuring that the label specifies which input it is bound to.
-    -->
-    <label
-      v-if="label"
-      class="v-input-label"
-      :for="$attrs.id"
-    >
-      {{ label }}
-    </label>
-    <!-- 
-    Bind attributes from parent to the input using v-bind="$attr", 
-    e.g. <v-input placerholder="Email"> will set the input's 
-    placeholder property to "Email".
-
-    v-on="listeners" ensures that all native events from the input
-    propagate to the parent, allowing native events to be called
-    from the parent, e.g. <v-input @focus="focusEvent" />
-    -->
+    <label v-text="label" :for="$attrs.id"></label>
     <input
-      class="v-input"
-      :class="[fullWidth ? 'full-width' : '']"
-      v-bind="$attrs"
-      v-on="listeners"
+      :type="type"
       :value="value"
+      :name="$attrs.name || $attrs.id"
+      v-on="listeners"
+      v-bind="$attrs"
+      ref="vinput"
+      class="v-input"
     >
   </div>
 </template>
@@ -36,28 +18,35 @@ export default {
   name: "VInput",
   inheritAttrs: false,
   props: {
-    value: String,
-    label: String,
-    fullWidth: Boolean
+    type: {
+      type: String,
+      default: "text"
+    },
+    value: {
+      type: [String, Number]
+    },
+    label: {
+      type: String,
+      default: ""
+    }
   },
   computed: {
-    /*
-    The "listeners()" computed property is responsible
-    for emitting all events from an inner element to the parent.
-    The input method ensures that v-model works with the parent.
-    */
+    /**
+     * Responsible for emitting all events from an inner element to the parent.
+     * The input method ensures that v-model works with the parent.
+     * @return {Object} [description]
+     */
     listeners() {
       return {
         ...this.$listeners,
         input: event => this.$emit("input", event.target.value)
       };
     }
-  },
-  methods: {}
+  }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .v-input-wrapper {
   display: flex;
   flex-direction: column;

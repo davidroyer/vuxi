@@ -7,21 +7,16 @@
     :tabindex="0"
     role="button"
     v-on="$listeners">
-    <span class="text">
-      <slot>
-        <!-- {{ label }} -->
-      </slot>
+    <span class="v-button-text">
+      <slot/>
     </span>
   </component>
 </template>
 
 <script>
 export default {
-  name: "v-button",
+  name: "VButton",
   props: {
-    routeUrl: String,
-    routeObject: Object,
-    onClick: Function,
     disabled: {
       type: Boolean,
       default: false
@@ -54,7 +49,11 @@ export default {
   font-size: 12px;
   text-transform: uppercase;
   border: $border-default;
+  transition: 0.3s ease;
 
+  &-button-text {
+    transition: 0.3s ease;
+  }
   .v-icon {
     color: inherit;
 
@@ -76,6 +75,10 @@ export default {
     cursor: pointer;
     color: $color-white;
     background-color: $color-black;
+
+    & .v-button-text {
+      color: $color-white;
+    }
   }
 
   &.disabled {

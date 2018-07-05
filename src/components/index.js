@@ -1,18 +1,18 @@
-// import Vue from "vue";
-
-import VButton from "./VButton.vue";
-import VInput from "./VInput.vue";
-
-const Components = {
-  VButton,
-  VInput
-};
+import upperFirst from "lodash/upperFirst";
+import camelCase from "lodash/camelCase";
+const VuxiComponents = require.context("./", true, /.vue$/);
 
 const Vuxi = {
   // eslint-disable-next-line
   install: function(Vue, options) {
-    Object.keys(Components).forEach(name => {
-      Vue.component(name, Components[name]);
+    VuxiComponents.keys().forEach(fileName => {
+      const componentConfig = VuxiComponents(fileName);
+      // PascalCase name without file extension
+      const componentName = upperFirst(
+        camelCase(fileName.replace(/\.\w+$/, ""))
+      );
+      // Globally register the component
+      Vue.component(componentName, componentConfig.default || componentConfig);
     });
   }
 };

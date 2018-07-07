@@ -1,5 +1,3 @@
-
-
 ---
 title: Components
 sidebar: auto
@@ -7,219 +5,219 @@ sidebar: auto
 
 # Components
 
-## v-button 
+## v-button
 
-### slots 
+### slots
 
-- `default`  
+- `default`
 
-### props 
+### props
 
-- `disabled` ***Boolean*** (*optional*) `default: false` 
+- `disabled` **_Boolean_** (_optional_) `default: false`
 
-- `type` ***String*** (*optional*) `default: 'button'` 
+- `type` **_String_** (_optional_) `default: 'button'`
 
-### computed properties 
+### computed properties
 
-- `component` 
+- `component`
 
-   **dependencies:** `$attrs`, `$attrs` 
+  **dependencies:** `$attrs`, `$attrs`
 
-## v-card 
+## v-card
 
-### slots 
+### slots
 
-- `header` Use this slot to for the card header 
+- `header` Use this slot to for the card header
 
-- `body` Use this slot to for the card body, which is the middle area 
+- `body` Use this slot to for the card body, which is the middle area
 
-- `footer` Use this slot to for the card footer 
+- `footer` Use this slot to for the card footer
 
-## checkbox 
+## checkbox
 
-A simple checkbox component 
+A simple checkbox component
 
-- **author** - Sébastien 
-- **license** - MIT 
-- **input** 
+- **author** - Sébastien
+- **license** - MIT
+- **input**
 
-### slots 
+### slots
 
-- `default`  
+- `default`
 
-- `label` Use this slot to set the checkbox label 
+- `label` Use this slot to set the checkbox label
 
-### props 
+### props
 
-- `model` ***Array*** (*required*) 
+- `model` **_Array_** (_required_)
 
-   The checkbox model 
+  The checkbox model
 
-- `disabled` ***Boolean*** (*optional*) 
+- `disabled` **_Boolean_** (_optional_)
 
-   Initial checkbox state 
+  Initial checkbox state
 
-- `enabled` ***Boolean*** (*optional*) `default: true` 
+- `enabled` **_Boolean_** (_optional_) `default: true`
 
-   Initial checkbox value 
+  Initial checkbox value
 
-- `label` ***String*** (*optional*) `default: 'Unamed checkbox'` 
+- `label` **_String_** (_optional_) `default: 'Unamed checkbox'`
 
-   The checkbox label 
+  The checkbox label
 
-- `object` ***Object*** (*optional*) `default: null` 
+- `object` **_Object_** (_optional_) `default: null`
 
-- `bool-false` ***Boolean*** (*optional*) `default: false` 
+- `bool-false` **_Boolean_** (_optional_) `default: false`
 
-### data 
+### data
 
-- `initialValue` 
+- `initialValue`
 
-   The initial component value. Used to detect changes and restore the initial value. 
+  The initial component value. Used to detect changes and restore the initial value.
 
-**initial value:** `''` 
+**initial value:** `''`
 
-- `currentValue` 
+- `currentValue`
 
-**initial value:** `''` 
+**initial value:** `''`
 
-### computed properties 
+### computed properties
 
-- `id` 
+- `id`
 
-   The component identifier. Generated using the `initialValue` data. 
+  The component identifier. Generated using the `initialValue` data.
 
-   **dependencies:** `initialValue` 
+  **dependencies:** `initialValue`
 
-- `changed` 
+- `changed`
 
-   **dependencies:** `currentValue`, `initialValue` 
+  **dependencies:** `currentValue`, `initialValue`
 
-- `withNoDependencies` 
+- `withNoDependencies`
 
-### events 
+### events
 
-- `loaded` 
+- `loaded`
 
-   Emitted when the component has been loaded 
+  Emitted when the component has been loaded
 
-- `enabled` 
+- `enabled`
 
-   Emitted the event `enabled` when loaded Multilign 
+  Emitted the event `enabled` when loaded Multilign
 
-### methods 
+### methods
 
-- `check()` 
+- `check()`
 
-   Check if the input is checked 
+  Check if the input is checked
 
-- `prop()` 
+- `prop()`
 
-- `dynamic()` 
+- `dynamic()`
 
-   Make component dynamic 
+  Make component dynamic
 
-- `dynamic2()` 
+- `dynamic2()`
 
-   Enter to dynamic mode 
+  Enter to dynamic mode
 
-- `enable(value)` 
+- `enable(value)`
 
-   Enable the checkbox 
+  Enable the checkbox
 
-## v-icon 
+## v-icon
 
-## v-input 
+## v-input
 
-The custom HTML `<input>` component. 
+The custom HTML `<input>` component.
 
-### props 
+### props
 
-- `type` ***String*** (*optional*) `default: 'text'` 
+- `type` **_String_** (_optional_) `default: 'text'`
 
-- `v-model` ***String|Number*** (*optional*) 
+- `v-model` **_String|Number_** (_optional_)
 
-   Use this directive to create two-way data bindings with the component. It automatically picks the correct way to update the element based on the input type. 
+  Use this directive to create two-way data bindings with the component. It automatically picks the correct way to update the element based on the input type.
 
-- `label` ***String*** (*optional*) `default: ''` 
+- `label` **_String_** (_optional_) `default: ''`
 
-   Provide a label 
+  Provide a label
 
-### computed properties 
+### computed properties
 
-- `listeners` 
+- `listeners`
 
-   Responsible for emitting all events from an inner element to the parent. The input method ensures that v-model works with the parent. 
+  Responsible for emitting all events from an inner element to the parent. The input method ensures that v-model works with the parent.
 
-   **dependencies:** `$listeners`, `$emit` 
+  **dependencies:** `$listeners`, `$emit`
 
-### methods 
+### methods
 
-- `setFocus()` 
+- `setFocus()`
 
-   Sets focus on input. Can be called programatically by setting an a ref and then calling this method Ex: `<v-button 
+  Sets focus on input. Can be called programatically by setting an a ref and then calling this method Ex: `<v-button
 
-## v-menu-button 
+## v-menu-button
 
-### slots 
+### slots
 
-- `default`  
+- `default`
 
-### props 
+### props
 
-- `checked` ***Boolean*** (*optional*) `default: false` 
+- `checked` **_Boolean_** (_optional_) `default: false`
 
-### computed properties 
+### computed properties
 
-- `menuIsActive` 
+- `menuIsActive`
 
-   **dependencies:** `checked` 
+  **dependencies:** `checked`
 
-## v-textarea 
+## v-textarea
 
-The custom HTML `<textarea>` component. 
+The custom HTML `<textarea>` component.
 
-- **author** - Sébastien 
-- **license** - MIT 
+- **author** - Sébastien
+- **license** - MIT
 
-### slots 
+### slots
 
-- `label` Use this slot to set the label 
+- `label` Use this slot to set the label
 
-### props 
+### props
 
-- `v-model` ***String*** (*optional*) 
+- `v-model` **_String_** (_optional_)
 
-   Use this directive to create two-way data bindings with the component. It automatically picks the correct way to update the element based on the input type. 
+  Use this directive to create two-way data bindings with the component. It automatically picks the correct way to update the element based on the input type.
 
-- `id` ***String*** (*required*) 
+- `id` **_String_** (_required_)
 
-   Defines a unique identifier (ID) which must be unique in the whole document. 
+  Defines a unique identifier (ID) which must be unique in the whole document.
 
-- `disable` ***Boolean*** (*optional*) `default: false` 
+- `disable` **_Boolean_** (_optional_) `default: false`
 
-   This Boolean property indicates that the user cannot interact with the control. 
+  This Boolean property indicates that the user cannot interact with the control.
 
-### events 
+### events
 
-- `input` 
+- `input`
 
-   Fired when the value is changed. 
+  Fired when the value is changed.
 
-   **arguments:** 
+  **arguments:**
 
-     - `value` **string** - The updated value 
+  - `value` **string** - The updated value
 
-- `keyup` 
+- `keyup`
 
-   Fired when a key is released. 
+  Fired when a key is released.
 
-### methods 
+### methods
 
-- `isEmpty()` 
+- `isEmpty()`
 
-   Define if the control value is empty of not. 
+  Define if the control value is empty of not.
 
-   **return value:** 
+  **return value:**
 
-     - **boolean** - true if empty; otherwise false 
+  - **boolean** - true if empty; otherwise false

@@ -25,7 +25,8 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "docs:serve": "http-server docs/.vuepress/dist",
-    "docs:api": "vuedoc.md src/components/*.vue --level 2 --section 'Components' --output docs/components/README.md"
+    "docs:api": "vuedoc.md src/components/*.vue --level 2 --section 'Components' --output docs/components/README.md",
+    "docs:deploy": "sh deploy-docs.sh"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.0",

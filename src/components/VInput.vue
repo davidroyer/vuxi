@@ -7,13 +7,17 @@
       :name="$attrs.name || $attrs.id"
       v-on="listeners"
       v-bind="$attrs"
-      ref="vinput"
+      ref="input"
       class="v-input"
     >
   </div>
 </template>
 
 <script>
+/**
+ * The custom HTML `<input>` component.
+ *
+ */
 export default {
   name: "VInput",
   inheritAttrs: false,
@@ -22,9 +26,20 @@ export default {
       type: String,
       default: "text"
     },
+    /**
+     * Use this directive to create two-way data bindings with the component.
+     * It automatically picks the correct way to update the element based on the input type.
+     * @model
+     */
+
     value: {
       type: [String, Number]
     },
+
+    /**
+     * Provide a label
+     * @type {String}
+     */
     label: {
       type: String,
       default: ""
@@ -41,6 +56,19 @@ export default {
         ...this.$listeners,
         input: event => this.$emit("input", event.target.value)
       };
+    }
+  },
+
+  methods: {
+    /**
+     * Sets focus on input.
+     * Can be called programatically by setting an a ref and then calling this method
+     * Ex:
+     * `<v-button @click="$refs.myInput.setFocus()"></v-button>`
+     * `<v-input ref="myInput" label="My Input"></v-input>`
+     */
+    setFocus() {
+      this.$refs.input.focus();
     }
   }
 };

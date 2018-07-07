@@ -1,12 +1,15 @@
 <template>
   <div class="v-card">
     <div class="v-card-header">
+      <!-- Use this slot to for the card header -->
       <slot name="header"></slot>
     </div>
     <div class="v-card-body">
+      <!-- Use this slot to for the card body, which is the middle area  -->
       <slot name="body"></slot>
     </div>
     <div class="v-card-footer">
+      <!-- Use this slot to for the card footer -->
       <slot name="footer"></slot>
     </div>
   </div>

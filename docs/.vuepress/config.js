@@ -1,7 +1,8 @@
 module.exports = {
-  title: "Vuxi - A Vue.js Component Library ",
+  title: "Vuxi",
   base: "/vuxi/",
-  description: "UI/UX components for building Vue.js applications",
+  description:
+    "A Vue.js Component Library consiting of UI/UX components for building websites",
   // ga: "UA-56060335-4",
   themeConfig: {
     repo: "davidroyer/vuxi",

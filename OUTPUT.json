@@ -1,0 +1,182 @@
+{
+  "name": "v-textarea",
+  "description": "The custom HTML `<textarea>` component.",
+  "keywords": [
+    { "name": "author", "description": "Sébastien" },
+    { "name": "license", "description": "MIT" }
+  ],
+  "slots": [
+    { "name": "label", "description": "Use this slot to set the label" }
+  ],
+  "props": [
+    {
+      "keywords": [{ "name": "model", "description": "" }],
+      "visibility": "public",
+      "description":
+        "Use this directive to create two-way data bindings with the component. It automatically picks the correct way to update the element based on the input type.",
+      "value": { "type": "String" },
+      "name": "v-model"
+    },
+    {
+      "keywords": [],
+      "visibility": "public",
+      "description":
+        "Defines a unique identifier (ID) which must be unique in the whole document.",
+      "value": { "type": "String", "required": true },
+      "name": "id"
+    },
+    {
+      "keywords": [],
+      "visibility": "public",
+      "description":
+        "This Boolean property indicates that the user cannot interact with the control.",
+      "value": { "type": "Boolean", "default": false },
+      "name": "disable"
+    }
+  ],
+  "data": [],
+  "computed": [],
+  "events": [
+    {
+      "name": "input",
+      "description": "Fired when the value is changed.",
+      "visibility": "public",
+      "keywords": [
+        { "name": "param", "description": "{string} value - The updated value" }
+      ],
+      "params": [
+        { "type": "string", "name": "value", "desc": "The updated value" }
+      ]
+    },
+    {
+      "name": "keyup",
+      "description": "Fired when a key is released.",
+      "visibility": "public",
+      "keywords": []
+    }
+  ],
+  "methods": [
+    {
+      "keywords": [
+        {
+          "name": "return",
+          "description": "{boolean} true if empty; otherwise false"
+        }
+      ],
+      "visibility": "public",
+      "description": "Define if the control value is empty of not.",
+      "value": {
+        "type": "FunctionExpression",
+        "start": 844,
+        "end": 907,
+        "range": [844, 907],
+        "id": null,
+        "generator": false,
+        "expression": false,
+        "async": false,
+        "params": [],
+        "body": {
+          "type": "BlockStatement",
+          "start": 847,
+          "end": 907,
+          "range": [847, 907],
+          "body": [
+            {
+              "type": "ReturnStatement",
+              "start": 855,
+              "end": 901,
+              "range": [855, 901],
+              "argument": {
+                "type": "LogicalExpression",
+                "start": 862,
+                "end": 900,
+                "range": [862, 900],
+                "left": {
+                  "type": "UnaryExpression",
+                  "start": 862,
+                  "end": 873,
+                  "range": [862, 873],
+                  "operator": "!",
+                  "prefix": true,
+                  "argument": {
+                    "type": "MemberExpression",
+                    "start": 863,
+                    "end": 873,
+                    "range": [863, 873],
+                    "object": {
+                      "type": "ThisExpression",
+                      "start": 863,
+                      "end": 867,
+                      "range": [863, 867]
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "start": 868,
+                      "end": 873,
+                      "range": [868, 873],
+                      "name": "value"
+                    },
+                    "computed": false
+                  }
+                },
+                "operator": "||",
+                "right": {
+                  "type": "BinaryExpression",
+                  "start": 877,
+                  "end": 900,
+                  "range": [877, 900],
+                  "left": {
+                    "type": "MemberExpression",
+                    "start": 877,
+                    "end": 894,
+                    "range": [877, 894],
+                    "object": {
+                      "type": "MemberExpression",
+                      "start": 877,
+                      "end": 887,
+                      "range": [877, 887],
+                      "object": {
+                        "type": "ThisExpression",
+                        "start": 877,
+                        "end": 881,
+                        "range": [877, 881]
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "start": 882,
+                        "end": 887,
+                        "range": [882, 887],
+                        "name": "value"
+                      },
+                      "computed": false
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "start": 888,
+                      "end": 894,
+                      "range": [888, 894],
+                      "name": "length"
+                    },
+                    "computed": false
+                  },
+                  "operator": "===",
+                  "right": {
+                    "type": "Literal",
+                    "start": 899,
+                    "end": 900,
+                    "range": [899, 900],
+                    "value": 0,
+                    "raw": "0"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "name": "isEmpty",
+      "args": [],
+      "return": { "type": "boolean", "desc": "true if empty; otherwise false" }
+    }
+  ]
+}

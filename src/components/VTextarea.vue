@@ -17,7 +17,7 @@
 /**
  * The custom HTML `<textarea>` component.
  *
- * @author Sébastien
+ * @author David Royer
  * @license MIT
  */
 export default {

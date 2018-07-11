@@ -1,9 +1,6 @@
 <template>
   <div class="v-card">
-    <div class="v-card-header">
-      <!-- Use this slot to for the card header -->
-      <slot name="header"></slot>
-    </div>
+    <div class="v-card-header" v-text="heading"></div>
     <div class="v-card-body">
       <!-- Use this slot to for the card body, which is the middle area  -->
       <slot name="body"></slot>
@@ -17,7 +14,13 @@
 
 <script>
 export default {
-  name: "VCard"
+  name: "VCard",
+  props: {
+    heading: {
+      type: String
+      // required: true
+    }
+  }
 };
 </script>
 
@@ -28,11 +31,14 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
-  // border: 1px solid $grey;
+  padding: 1rem;
+  border: 1px solid gray;
+  margin: 0.5rem;
+  font-size: 1.25rem;
 
   &-header {
     flex: 1;
+    font-weight: 600;
   }
 
   &-body {

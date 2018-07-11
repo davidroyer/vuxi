@@ -1,7 +1,7 @@
 $min_width: 320px;
 $max_width: 1200px;
 $min_font: 16px;
-$max_font: 24px;
+$max_font: 21px;
 $text-color: #333;
 $quiet-color: #ccc;
 $loud-color: #000;
@@ -12,7 +12,7 @@ $link-hover-color: saturate(#d54aaf, 20%);
 $link-visited-color: purple;
 
 $base-font-family: "Roboto Condensed", sans-serif;
-$base-font-size: 18px;
+$base-font-size: 16px;
 $base-font-weight: 300;
 
 $fixed-font-family: "Andale Mono", AndaleMono, monospace;
@@ -255,36 +255,36 @@ body {
 $mod_1: 1.2; // mobile
 $mod_2: 1.5; // desktop
 
-h1 {
-  font-size: $mod_1 * $mod_1 * $mod_1 * $mod_1 * 1rem;
-  @include fluid-type(
-    $min_width,
-    $max_width,
-    $mod_1 * $mod_1 * $mod_1 * $min_font,
-    $mod_2 * $mod_2 * $mod_2 * $min_font
-  );
-}
-h2 {
-  font-size: $mod_1 * $mod_1 * $mod_1 * 1rem;
-  @include fluid-type(
-    $min_width,
-    $max_width,
-    $mod_1 * $mod_1 * $mod_1 * $min_font,
-    $mod_2 * $mod_2 * $mod_2 * $min_font
-  );
-}
-h3 {
-  font-size: $mod_1 * $mod_1 * 1rem;
-  @include fluid-type(
-    $min_width,
-    $max_width,
-    $mod_1 * $mod_1 * $min_font,
-    $mod_2 * $mod_2 * $min_font
-  );
-}
+// h1 {
+//   font-size: $mod_1 * $mod_1 * $mod_1 * $mod_1 * 1rem;
+//   @include fluid-type(
+//     $min_width,
+//     $max_width,
+//     $mod_1 * $mod_1 * $mod_1 * $min_font,
+//     $mod_2 * $mod_2 * $mod_2 * $min_font
+//   );
+// }
+// h2 {
+//   font-size: $mod_1 * $mod_1 * $mod_1 * 1rem;
+//   @include fluid-type(
+//     $min_width,
+//     $max_width,
+//     $mod_1 * $mod_1 * $mod_1 * $min_font,
+//     $mod_2 * $mod_2 * $mod_2 * $min_font
+//   );
+// }
+// h3 {
+//   font-size: $mod_1 * $mod_1 * 1rem;
+//   @include fluid-type(
+//     $min_width,
+//     $max_width,
+//     $mod_1 * $mod_1 * $min_font,
+//     $mod_2 * $mod_2 * $min_font
+//   );
+// }
 
 html {
-  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+  // @include fluid-type($min_width, $max_width, $min_font, $max_font);
 }
 
 /*

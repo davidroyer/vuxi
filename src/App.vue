@@ -1,8 +1,7 @@
 <template>
 <div id="app">
-  <v-card>
-    <div slot="header">Card Header</div>
-    <div slot="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit eius corrupti a sint recusandae neque dolorum distinctio cupiditate. Unde non, odit praesentium odio, voluptate laboriosam eos quod vero ipsa nemo.</div>
+  <v-card heading="Card Header">
+    <p slot="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit eius corrupti a sint recusandae neque dolorum distinctio cupiditate. Unde non, odit praesentium odio, voluptate laboriosam eos quod vero ipsa nemo.</p>
     <div slot="footer">Card Footer</div>
   </v-card>
   <!-- <v-icon icon="faAddressBook"></v-icon>

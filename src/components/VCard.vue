@@ -22,12 +22,14 @@ export default {
 </script>
 
 <style lang="scss">
+// @import "../assets/styles/global-resources.scss";
+
 .v-card {
   height: 100%;
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
-  border: 1px solid $grey;
+  // border: 1px solid $grey;
 
   &-header {
     flex: 1;

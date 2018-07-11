@@ -5,7 +5,7 @@ module.exports = {
       // pass options to sass-loader
       sass: {
         // @/ is an alias to src/
-        data: `@import "@/assets/styles/global-resources.scss";`
+        // data: `@import "@/assets/styles/global-resources.scss";`
       }
     }
   }

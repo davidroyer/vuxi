@@ -44,11 +44,11 @@ export default {
 .v-button {
   display: flex;
   align-items: center;
-  height: $size-large;
-  font-family: $font-heading-family;
+  // height: $size-large;
+  // font-family: $font-heading-family;
   font-size: 12px;
   text-transform: uppercase;
-  border: $border-default;
+  // border: $border-default;
   transition: 0.3s ease;
 
   &-button-text {
@@ -58,33 +58,33 @@ export default {
     color: inherit;
 
     &.left {
-      margin-right: $size-xsmall;
+      // margin-right: $size-xsmall;
     }
 
     &.right {
-      margin-left: $size-xsmall;
+      // margin-left: $size-xsmall;
     }
   }
 
   &.large {
-    height: $size-xlarge;
+    // height: $size-xlarge;
     font-size: 14px;
   }
 
   &:hover {
     cursor: pointer;
-    color: $color-white;
-    background-color: $color-black;
+    // color: $color-white;
+    // background-color: $color-black;
 
     & .v-button-text {
-      color: $color-white;
+      // color: $color-white;
     }
   }
 
   &.disabled {
     cursor: not-allowed;
-    color: $color-white;
-    background: $color-black;
+    // color: $color-white;
+    // background: $color-black;
   }
 }
 </style>

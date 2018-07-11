@@ -16,7 +16,10 @@
 <script>
 /**
  * The custom HTML `<input>` component.
- *
+ * @example
+ * <div>
+ *   <v-input id="inputExample" label="My Input Example"></v-input>
+ * </div>
  */
 export default {
   name: "VInput",
@@ -63,9 +66,13 @@ export default {
     /**
      * Sets focus on input.
      * Can be called programatically by setting an a ref and then calling this method
-     * Ex:
-     * `<v-button @click="$refs.myInput.setFocus()"></v-button>`
-     * `<v-input ref="myInput" label="My Input"></v-input>`
+     * @render vuejs
+     * @example
+     * <template>
+     *   <v-button @click="$refs.myInput.setFocus()"></v-button>
+     *   <v-input ref="myInput" label="My Input"></v-input>
+     * </template>
+     *
      */
     setFocus() {
       this.$refs.input.focus();
@@ -82,19 +89,19 @@ export default {
 }
 
 .v-input-label {
-  margin-bottom: $size-xsmall;
-  font-family: $font-heading-family;
+  // margin-bottom: $size-xsmall;
+  // font-family: $font-heading-family;
   font-size: 14px;
 }
 
 .v-input {
-  height: $size-xlarge;
+  // height: $size-xlarge;
   width: 100%;
   max-width: 200px;
-  margin-bottom: $size-xsmall;
-  padding: 0 $size-xsmall;
-  font-size: 14px;
-  border: $border-default;
+  // margin-bottom: $size-xsmall;
+  // padding: 0 $size-xsmall;
+  // font-size: 14px;
+  // border: $border-default;
 
   &.full-width {
     max-width: 100%;

@@ -1,6 +1,6 @@
 {
   "name": "vuxi",
-  "version": "0.1.5",
+  "version": "0.0.0-development",
   "description": "Vue.js UX/UI Component Library",
   "author": {
     "name": "David Royer",
@@ -8,13 +8,14 @@
   },
   "private": false,
   "repository": {
-    "url": "davidroyer/vuxi",
+    "url": "https://github.com/davidroyer/vuxi.git",
     "type": "git"
   },
   "files": [
     "dist"
   ],
   "main": "dist/vuxi.common.js",
+
   "scripts": {
     "dev": "vue-cli-service serve --open",
     "serve": "vue-cli-service serve --open",
@@ -27,7 +28,12 @@
     "docs:serve": "http-server docs/.vuepress/dist",
     "docs:api": "vuedoc.md src/components/*.vue --level 2 --section 'Components' --output docs/components/README.md",
     "docs:deploy": "sh deploy-docs.sh",
-    "parser": "node docs-api.js"
+    "parser": "node docs-api.js",
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once",
+    "commit": "git-cz",
+    "test": "mocha src/index.test.js -w",
+    "semantic-release2": "semantic-release pre && npm publish && semantic-release post"    
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.0",
@@ -46,7 +52,9 @@
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.3",
     "vue-template-compiler": "^2.5.16",
-    "vuepress": "^0.10.2"
+    "vuepress": "^0.10.2",
+    "semantic-release": "^15.9.2",
+    "travis-deploy-once": "^5.0.1"
   },
   "eslintConfig": {
     "root": true,

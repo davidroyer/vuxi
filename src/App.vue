@@ -143,7 +143,7 @@ export default {
 
   methods: {
     handleClick() {
-      alert("Click was handled.");
+      console.log('Button was clicked!');
     },
     handleFocus() {
       console.log("Focus was set."); // eslint-disable

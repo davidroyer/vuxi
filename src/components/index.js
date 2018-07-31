@@ -7,10 +7,11 @@ const Vuxi = {
   install: function(Vue, options) {
     VuxiComponents.keys().forEach(fileName => {
       const componentConfig = VuxiComponents(fileName);
-      // PascalCase name without file extension
-      const componentName = upperFirst(
-        camelCase(fileName.replace(/\.\w+$/, ""))
-      );
+
+      const componentName = componentConfig.default.name
+        ? componentConfig.default.name
+        : upperFirst(camelCase(fileName.replace(/\.\w+$/, "")));
+
       // Globally register the component
       Vue.component(componentName, componentConfig.default || componentConfig);
     });
